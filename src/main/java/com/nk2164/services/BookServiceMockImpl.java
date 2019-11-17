@@ -119,7 +119,6 @@ public class BookServiceMockImpl implements BookService
 		}
 		Collections.sort(returnList, new Comparator<Book>() {
 
-			@Override
 			public int compare(Book b1, Book b2) {
 				return b1.getTitle().compareTo(b2.getTitle());
 			}			

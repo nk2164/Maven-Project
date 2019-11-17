@@ -1,35 +1,84 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <!--  See http://maven.apache.org/pom.html for a full description of all supported values -->
+	<modelVersion>4.0.0</modelVersion>
 
-  <!-- GroupID - identifies WHO is making the project -->
-  <groupId>com.nk2164</groupId>
-  
-  <!--  ArtifactId - the name of this project -->
-  <artifactId>bookstore</artifactId>
-  
-  <!--  The current version -->
-  <version>1.0-SNAPSHOT</version>
-  
-  <!--  How are we packaging - jar, war, ear -->
-  <packaging>jar</packaging>
+	<!-- See http://maven.apache.org/pom.html for a full description of all 
+		supported values -->
 
-  <!--  This is optional, used for any local names for the project. Can be "softer" than the artifactId -->
-  <name>My Bookstore</name>
-  
-  <!--  The web site for the project -->
-  <url>http://bookstore.nk2164.com</url>
-  
-  <!--  And now, a list of Maven projects that we depend upon -->
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<!-- GroupID - identifies WHO is making the project -->
+	<groupId>com.nk2164</groupId>
+
+	<!-- ArtifactId - the name of this project -->
+	<artifactId>bookstore</artifactId>
+
+	<!-- The current version -->
+	<version>1.0-SNAPSHOT</version>
+
+	<!-- How are we packaging - jar, war, ear -->
+	<packaging>jar</packaging>
+
+	<!-- This is optional, used for any local names for the project. Can be 
+		"softer" than the artifactId -->
+	<name>My Bookstore</name>
+
+	<!-- The web site for the project -->
+	<url>http://bookstore.nk2164.com</url>
+
+	<!-- And now, a list of Maven projects that we depend upon -->
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.0.3.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Although spring MVC declared it in its POM, its not automatically 
+			down loaded for you since its needed only for compile (i.e. the scope is 
+			set to provided. So we need to explicitly declare the below item -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.18.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.1</version>
+		</dependency>
+
+	</dependencies>
 </project>

@@ -1,10 +1,7 @@
 package com.nk2164.services;
 
-import java.util.List;
-
 import com.nk2164.domain.Book;
 import com.nk2164.domain.Customer;
-import com.nk2164.domain.Order;
 
 public interface AccountsService 
 {
