@@ -6,7 +6,7 @@
   <!--  See http://maven.apache.org/pom.html for a full description of all supported values -->
 
   <!-- GroupID - identifies WHO is making the project -->
-  <groupId>com.virtualpairprogrammers</groupId>
+  <groupId>com.nk2164</groupId>
   
   <!--  ArtifactId - the name of this project -->
   <artifactId>bookstore</artifactId>
@@ -18,10 +18,10 @@
   <packaging>jar</packaging>
 
   <!--  This is optional, used for any local names for the project. Can be "softer" than the artifactId -->
-  <name>Hartley's Bookstore</name>
+  <name>My Bookstore</name>
   
-  <!--  The website for the project -->
-  <url>http://bookstore.virtualpairprogrammers.com</url>
+  <!--  The web site for the project -->
+  <url>http://bookstore.nk2164.com</url>
   
   <!--  And now, a list of Maven projects that we depend upon -->
   <dependencies>
