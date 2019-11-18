@@ -25,6 +25,20 @@
 
 	<!-- The web site for the project -->
 	<url>http://bookstore.nk2164.com</url>
+	
+	<!--  Plugin configurations -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<verbose>false</verbose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<!-- And now, a list of Maven projects that we depend upon -->
 	<dependencies>
