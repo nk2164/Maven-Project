@@ -26,7 +26,7 @@ public class SpringClient
 		books.registerNewBook(new Book("0764543857", "Expert One-on-one J2EE Design and Development", "Rod Johnson", 28.59));
 		books.registerNewBook(new Book("3838738783", "Basic Java", "James Gosling", 10.99));
 
-		// show the entire catalogue
+		// show the entire catalog
 		System.out.println("Here's our entire catalougue:\n");
 		List<Book> allBooks = books.getEntireCatalogue();
 		for (Book next : allBooks)

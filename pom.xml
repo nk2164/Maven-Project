@@ -25,8 +25,8 @@
 
 	<!-- The web site for the project -->
 	<url>http://bookstore.nk2164.com</url>
-	
-	<!--  Plugin configurations -->
+
+	<!-- Plugin configurations -->
 	<build>
 		<plugins>
 			<plugin>
@@ -35,6 +35,21 @@
 				<version>3.1</version>
 				<configuration>
 					<verbose>false</verbose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+						 <mainClass>
+						 	com.nk2164.client.SpringClient
+						 </mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
