@@ -45,9 +45,9 @@
 				<configuration>
 					<archive>
 						<manifest>
-						 <mainClass>
-						 	com.nk2164.client.SpringClient
-						 </mainClass>
+							<mainClass>
+								com.nk2164.client.SpringClient
+							</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
