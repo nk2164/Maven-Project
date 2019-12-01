@@ -17,7 +17,7 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<!-- How are we packaging - jar, war, ear -->
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<!-- This is optional, used for any local names for the project. Can be 
 		"softer" than the artifactId -->
@@ -31,6 +31,25 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<outputDirectory>${basedir}/../tomcat/webapps</outputDirectory>
+					<warName>mymavenwebapp</warName>
+					<webResources>
+						<webResource>
+							<directory>${basedir}/src/main/resources</directory>
+							<targetPath>WEB-INF</targetPath>
+							<includes>
+								<include>**/application.xml</include>
+								<include>**/*.properties</include>
+							</includes>
+						</webResource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
@@ -38,20 +57,30 @@
 				</configuration>
 			</plugin>
 
+			<!-- This commented item is the configuration if we needed a JAR , i.e 
+				when <packaging>jar</packaging> is specified. At this point, i have commented 
+				this since we are creating a war instead. -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
+				<version>3.2.0</version> <configuration> <archive> <manifest> <mainClass> 
+				com.nk2164.client.SpringClient </mainClass> </manifest> </archive> <descriptorRefs> 
+				<descriptorRef>jar-with-dependencies</descriptorRef> </descriptorRefs> </configuration> 
+				<executions> <execution> <phase>package</phase> <goals> <goal>single</goal> 
+				</goals> </execution> </executions> </plugin> -->
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>
-								com.nk2164.client.SpringClient
-							</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.8.2</version>
 			</plugin>
+
+			<!-- This commented item is the configuration if we needed a JAR , i.e 
+				when <packaging>jar</packaging> is specified. At this point, i have commented 
+				this since we are creating a war instead. -->
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
+				<version>2.4</version> <executions> <execution> <id>default-jar</id> <phase>none</phase> 
+				</execution> </executions> </plugin> -->
+
 		</plugins>
 	</build>
 
@@ -75,11 +104,8 @@
 		<!-- Although spring MVC declared it in its POM, its not automatically 
 			down loaded for you since its needed only for compile (i.e. the scope is 
 			set to provided. So we need to explicitly declare the below item -->
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-		</dependency>
+		<!-- <dependency> <groupId>javax.validation</groupId> <artifactId>validation-api</artifactId> 
+			<version>1.0.0.GA</version> </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 		<dependency>
@@ -108,6 +134,23 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>4.1.1</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.webflow/spring-webflow -->
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+			<version>2.3.2.RELEASE</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>runtime</scope>
+		</dependency>
+
 
 	</dependencies>
 </project>
