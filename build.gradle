@@ -1,0 +1,16 @@
+defaultTasks 'helloAgain'
+
+task hello << {
+	println "Hello World!"
+}
+
+task helloAgain << {
+	println "Hello a second time!"
+}
+
+helloAgain.doFirst {
+	println "This is an extension of hello again"
+}
+
+//add a dependency
+helloAgain.dependsOn 'hello'
