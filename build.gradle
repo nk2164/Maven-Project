@@ -1,16 +1,31 @@
-defaultTasks 'helloAgain'
+apply plugin: 'java'
 
-task hello << {
-	println "Hello World!"
+defaultTasks 'test'
+
+repositories {
+  mavenCentral()
 }
 
-task helloAgain << {
-	println "Hello a second time!"
-}
+dependencies {
+	// https://mvnrepository.com/artifact/junit/junit
+	compile group: 'junit', name: 'junit', version: '3.8.1'
+	// https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '3.1.1.RELEASE'
+	// https://mvnrepository.com/artifact/javax.validation/validation-api
+	compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+	compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.3.1.Final' 
+	// https://mvnrepository.com/artifact/javax.servlet/servlet-api
+	compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'   
+    // https://mvnrepository.com/artifact/com.lowagie/itext
+	compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi
+	compile group: 'org.apache.poi', name: 'poi', version: '3.9'
 
-helloAgain.doFirst {
-	println "This is an extension of hello again"
+	// https://mvnrepository.com/artifact/org.springframework.webflow/spring-webflow
+	runtime group: 'org.springframework.webflow', name: 'spring-webflow', version: '2.3.2.RELEASE'
+	// https://mvnrepository.com/artifact/jstl/jstl
+	runtime group: 'jstl', name: 'jstl', version: '1.2'
+	
+    
 }
-
-//add a dependency
-helloAgain.dependsOn 'hello'
